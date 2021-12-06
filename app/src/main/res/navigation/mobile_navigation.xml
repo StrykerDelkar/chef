@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_meal_generator">
+
+    <fragment
+        android:id="@+id/navigation_meal_generator"
+        android:name="hemberger.patrick.chef.ui.mealGenerator.MealGeneratorFragment"
+        android:label="@string/title_meal_generator"
+        tools:layout="@layout/fragment_meal_generator" />
+
+    <fragment
+        android:id="@+id/navigation_ingredient_combinator"
+        android:name="hemberger.patrick.chef.ui.ingredientCombinator.IngredientCombinatorFragment"
+        android:label="@string/title_ingredient_combinator"
+        tools:layout="@layout/fragment_ingredient_combinator" />
+</navigation>

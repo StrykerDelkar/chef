@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_meal_generator"
+        android:icon="@drawable/baseline_lunch_dining_24"
+        android:title="@string/title_meal_generator" />
+
+    <item
+        android:id="@+id/navigation_ingredient_combinator"
+        android:icon="@drawable/baseline_menu_book_24"
+        android:title="@string/title_ingredient_combinator" />
+
+</menu>
