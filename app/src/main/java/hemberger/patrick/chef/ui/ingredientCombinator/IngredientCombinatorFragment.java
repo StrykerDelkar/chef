@@ -34,6 +34,7 @@ public class IngredientCombinatorFragment extends Fragment {
         textView.setText(s);
       }
     });
+    
     return root;
   }
   

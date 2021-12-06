@@ -10,7 +10,7 @@ public class MealGeneratorViewModel extends ViewModel {
   
   public MealGeneratorViewModel() {
     mText = new MutableLiveData<>();
-    mText.setValue("Meal Generator");
+    mText.setValue("Intolerances to account for:");
   }
   
   public LiveData<String> getText() {

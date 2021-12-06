@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Dessert extends Dish{
   private String type;
   
-  public Dessert(String name, ArrayList<String> ingredients, ArrayList<String> intolerances, ArrayList<String> animalProducts) {
-    super(name, ingredients, intolerances, animalProducts);
+  public Dessert(String name, ArrayList<String> ingredients, String type) {
+    super(name, ingredients);
     this.type = type;
   }
   
