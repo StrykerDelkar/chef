@@ -42,7 +42,6 @@ public class MealGeneratorFragment extends Fragment implements AdapterView.OnIte
   private String chosenDessertType;
   private String pickedMainDish;
   private String pickedDessert;
-  
   private FragmentMealGeneratorBinding binding;
   
   public View onCreateView(@NonNull LayoutInflater inflater,
