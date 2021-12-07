@@ -6,4 +6,26 @@
     <string name="lactose">Lactose</string>
     <string name="nuts">Nuts</string>
     <string name="button_generate_text">generate delicious meal</string>
+    <string name="generator_intolerances">Intolerances to Account for:</string>
+    <string name="generator_dessert_type">Dessert Type:</string>
+    <string name="enter_ingredient">Enter ingredient…</string>
+    <string name="button_ingredient_submit">Submit</string>
+    <string name="generator_ingredient">Ingredient:</string>
+    <string name="generator_title_main">Random Main Dish:</string>
+    <string name="generator_title_dessert">Random Dessert:</string>
+    <string name="empty_string"></string>
+    <string name="button_combine_text">Combine Ingredients</string>
+    <string name="button_blacklist_clear">Clear Blacklist</string>
+    <string name="button_blacklist_add">Add to Blacklist</string>
+    <string-array name="dessert_array">
+        <item>cake</item>
+        <item>chocolate</item>
+        <item>ice cream</item>
+    </string-array>
+    <string-array name="count_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>
