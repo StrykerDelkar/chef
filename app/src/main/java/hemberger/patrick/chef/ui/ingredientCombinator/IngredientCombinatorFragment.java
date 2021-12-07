@@ -51,8 +51,8 @@ public class IngredientCombinatorFragment extends Fragment implements AdapterVie
     final TextView textIntolerances = binding.textCombinerIntolerances;
     textIntolerances.setText(R.string.generator_intolerances);
     
-    final TextView textDessertType = binding.textGeneratorDessertType;
-    textDessertType.setText(R.string.generator_dessert_type);
+    final TextView textCount = binding.textCombineCount;
+    textCount.setText(R.string.combiner_count);
     
     final TextView textIngredient = binding.textGeneratorIngredient;
     textIngredient.setText(R.string.generator_ingredient);

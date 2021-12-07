@@ -17,6 +17,8 @@
     <string name="button_combine_text">Combine Ingredients</string>
     <string name="button_blacklist_clear">Clear Blacklist</string>
     <string name="button_blacklist_add">Add to Blacklist</string>
+    <string name="combiner_count">Ingredient count:</string>
+    <string name="combiner_title_ingredients">Ingredients:</string>
     <string-array name="dessert_array">
         <item>cake</item>
         <item>chocolate</item>
