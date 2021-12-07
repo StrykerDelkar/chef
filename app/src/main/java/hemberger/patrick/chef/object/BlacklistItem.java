@@ -9,14 +9,13 @@ public class BlacklistItem {
     this.ingredients = ingredients;
   }
   
-  public BlacklistItem(){
+  public BlacklistItem() {
     ingredients = new ArrayList<>();
   }
   
   public ArrayList<String> getIngredients() {
     return ingredients;
   }
-  
   
   public boolean checkForIngredient(String ingredient) {
     boolean contained = false;

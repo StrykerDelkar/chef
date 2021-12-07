@@ -32,8 +32,6 @@ public class IngredientCombinatorFragment extends Fragment implements AdapterVie
   private String pickedIngredients;
   private Blacklist blacklist;
   private BlacklistItem currentCombination;
-  
-  
   private FragmentIngredientCombinatorBinding binding;
   
   public View onCreateView(@NonNull LayoutInflater inflater,

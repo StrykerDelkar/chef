@@ -10,12 +10,8 @@ public class Blacklist{
     blacklist = new ArrayList<>();
   }
   
-  public ArrayList<BlacklistItem> getBlacklist() {
-    return blacklist;
-  }
-  
-  public void addItem(BlacklistItem item){
-    blacklist.add(item);
+  public void addItem(BlacklistItem input){
+    blacklist.add(input);
   }
   
   public void clearList() {
