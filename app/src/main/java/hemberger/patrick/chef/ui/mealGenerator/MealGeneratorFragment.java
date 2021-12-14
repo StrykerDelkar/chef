@@ -7,27 +7,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Collections;
 
 import hemberger.patrick.chef.databinding.FragmentMealGeneratorBinding;
 import hemberger.patrick.chef.object.Dessert;
 import hemberger.patrick.chef.object.DessertCollection;
-import hemberger.patrick.chef.object.Dish;
-import hemberger.patrick.chef.object.DishCollection;
 import hemberger.patrick.chef.object.MainDish;
 import hemberger.patrick.chef.object.MainDishCollection;
 import hemberger.patrick.chef.object.Meal;
@@ -74,35 +66,29 @@ public class MealGeneratorFragment extends Fragment implements AdapterView.OnIte
     
     // Switches to communicate intolerances the generator has to account for
     SwitchCompat chocolateSwitch = root.findViewById(R.id.switch_chocolate);
-    chocolateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    chocolateSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
     SwitchCompat lactoseSwitch = root.findViewById(R.id.switch_lactose);
-    lactoseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    lactoseSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
     SwitchCompat nutsSwitch = root.findViewById(R.id.switch_nuts);
-    nutsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    nutsSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
@@ -120,22 +106,16 @@ public class MealGeneratorFragment extends Fragment implements AdapterView.OnIte
     String ingredientEditValue = ingredientEdit.getText().toString();
     
     Button ingredientSubmitButton = root.findViewById(R.id.button_ingredient_input);
-    ingredientSubmitButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        chosenIngredient = ingredientEditValue;
-      }
-    });
+    ingredientSubmitButton.setOnClickListener(v -> chosenIngredient = ingredientEditValue);
     
     Button generateButton = root.findViewById(R.id.button_generate);
-    generateButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        generateMeal();
-        textDessertDisplay.invalidate();
-        textMainDishDisplay.invalidate();
-        textMainDishDisplay.setText(pickedMainDish);
-        textDessertDisplay.setText(pickedDessert);
-        
-      }
+    generateButton.setOnClickListener(v -> {
+      generateMeal();
+      textDessertDisplay.invalidate();
+      textMainDishDisplay.invalidate();
+      textMainDishDisplay.setText(pickedMainDish);
+      textDessertDisplay.setText(pickedDessert);
+      
     });
     
     return root;

@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -60,35 +59,29 @@ public class IngredientCombinatorFragment extends Fragment implements AdapterVie
     
     // Switches to communicate intolerances the generator has to account for
     SwitchCompat chocolateSwitch = root.findViewById(R.id.switch_chocolate);
-    chocolateSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    chocolateSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
     SwitchCompat lactoseSwitch = root.findViewById(R.id.switch_lactose);
-    lactoseSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    lactoseSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
     SwitchCompat nutsSwitch = root.findViewById(R.id.switch_nuts);
-    nutsSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        if (isChecked) {
-          addIntolerance("chocolate");
-        } else {
-          removeIntolerance("chocolate");
-        }
+    nutsSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
+      if (isChecked) {
+        addIntolerance("chocolate");
+      } else {
+        removeIntolerance("chocolate");
       }
     });
     
@@ -107,34 +100,20 @@ public class IngredientCombinatorFragment extends Fragment implements AdapterVie
     
     Button ingredientSubmitButton = root.findViewById(R.id.button_ingredient_input);
     
-    ingredientSubmitButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        chosenIngredient = ingredientEditValue;
-      }
-    });
+    ingredientSubmitButton.setOnClickListener(v -> chosenIngredient = ingredientEditValue);
     
     Button generateButton = root.findViewById(R.id.button_combine);
-    generateButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        combineIngredients();
-        textPickedIngredients.invalidate();
-        textPickedIngredients.setText(pickedIngredients);
-      }
+    generateButton.setOnClickListener(v -> {
+      combineIngredients();
+      textPickedIngredients.invalidate();
+      textPickedIngredients.setText(pickedIngredients);
     });
     
     Button clearButton = root.findViewById(R.id.button_blacklist_clear);
-    clearButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        blacklist.clearList();
-      }
-    });
+    clearButton.setOnClickListener(v -> blacklist.clearList());
     
     Button addButton = root.findViewById(R.id.button_blacklist_add);
-    addButton.setOnClickListener(new View.OnClickListener() {
-      public void onClick(View v) {
-        blacklist.addItem(currentCombination);
-      }
-    });
+    addButton.setOnClickListener(v -> blacklist.addItem(currentCombination));
     
     return root;
   }
@@ -177,9 +156,9 @@ public class IngredientCombinatorFragment extends Fragment implements AdapterVie
   
   public void combineIngredients() {
     Ingredients ingredients = new Ingredients();
-    boolean allowed = false;
+    boolean allowed;
     boolean ingredientContained = true;
-    ArrayList<String> picked = new ArrayList<>();
+    ArrayList<String> picked;
     ingredients.filterIntolerances(intolerances);
     do {
       picked = ingredients.pickRandomIngredients(Integer.parseInt(ingredientCount));
