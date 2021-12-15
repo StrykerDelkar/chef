@@ -3,8 +3,8 @@ package hemberger.patrick.chef.object;
 import java.util.ArrayList;
 
 public class Dish {
-  private String name;
-  private ArrayList<String> ingredients;
+  private final String name;
+  private final ArrayList<String> ingredients;
   private String type;
   
   public Dish(String name, ArrayList<String> ingredients){

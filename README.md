@@ -1,5 +1,5 @@
 # CHEF
-This is the CHEF-Application, which helps indecicisve people to choose a meal.
+This is the CHEF-Application, which helps indecisive people to choose a meal.
 
 Link to this Repo: [CHEF](https://github.com/StrykerDelkar/chef)
 
@@ -7,7 +7,7 @@ Link to this Repo: [CHEF](https://github.com/StrykerDelkar/chef)
 Generate a new Meal containing a main dish as well as a dessert by clicking on the "Generate Delicious Meal" Button
 
 ### Dessert Type
-You can choose wich type of dessert you would like to consume with your main dish, like cake or ice cream.
+You can choose which type of dessert you would like to consume with your main dish, like cake or ice cream.
 
 ### Desired Ingredient
 
@@ -39,5 +39,5 @@ Note: This feature isn't fully implemented yet and will be completed in future r
 ### Ingredient Filtering
 
 ## The ingredient Filtering seems not to work properly yet.
-For some reason the check, wether an ingredient-String is contained in an ArrayList of Strings will allways return false.
+For some reason the check, whether an ingredient-String is contained in an ArrayList of Strings will always return false.
 I have not come up with a solution yet, but I'll keep working on it.

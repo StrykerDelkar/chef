@@ -3,7 +3,7 @@ package hemberger.patrick.chef.object;
 import java.util.ArrayList;
 
 public class BlacklistItem {
-  private ArrayList<String> ingredients;
+  private final ArrayList<String> ingredients;
   
   public BlacklistItem(ArrayList<String> ingredients) {
     this.ingredients = ingredients;

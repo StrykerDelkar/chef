@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Iterator;
 
 public class Ingredients {
-  private ArrayList<String> list;
+  private final ArrayList<String> list;
   
   public Ingredients() {
     list = new ArrayList<>();
@@ -26,13 +26,7 @@ public class Ingredients {
   }
   
   public void filterIntolerances(ArrayList<String> intolerances) {
-    ArrayList<String> tempList = list;
-    for (Iterator<String> stringIterator = intolerances.iterator(); stringIterator.hasNext(); ) {
-      String item = stringIterator.next();
-      if (tempList.contains(item)){
-        stringIterator.remove();
-      }
-    }
+    list.removeIf(intolerances::contains);
   }
   
   public ArrayList<String> pickRandomIngredients(int count) {

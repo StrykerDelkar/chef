@@ -40,23 +40,13 @@ public abstract class DishCollection {
    */
   public void filterType(String type) {
     ArrayList<Dish> temp = collection;
-    for (Iterator<Dish> dishIterator = temp.iterator(); dishIterator.hasNext(); ) {
-      Dish dish = dishIterator.next();
-      if (!dish.getType().equals(type)) {
-        dishIterator.remove();
-      }
-    }
+    temp.removeIf(dish -> !dish.getType().equals(type));
     collection = temp;
   }
   
   public void filterIngredient(String ingredient) {
     ArrayList<Dish> temp = collection;
-    for (Iterator<Dish> dishIterator = temp.iterator(); dishIterator.hasNext(); ) {
-      Dish dish = dishIterator.next();
-      if (!ingredient.equals("") &&  dish.getIngredients().contains(ingredient)) {
-        dishIterator.remove();
-      }
-    }
+    temp.removeIf(dish -> !ingredient.equals("") && dish.getIngredients().contains(ingredient));
     collection = temp;
   }
   

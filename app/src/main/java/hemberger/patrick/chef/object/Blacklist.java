@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Blacklist{
-  private ArrayList<BlacklistItem> blacklist;
+  private final ArrayList<BlacklistItem> blacklist;
   
   public Blacklist() {
     blacklist = new ArrayList<>();
@@ -15,10 +15,8 @@ public class Blacklist{
   }
   
   public void clearList() {
-    for (Iterator<BlacklistItem> blacklistItemIterator = blacklist.iterator(); blacklistItemIterator.hasNext(); ) {
-      BlacklistItem item = blacklistItemIterator.next();
-        blacklistItemIterator.remove();
-    }
+    for (Iterator<BlacklistItem> blacklistItemIterator = blacklist.iterator(); blacklistItemIterator.hasNext(); )
+      blacklistItemIterator.remove();
   }
   
   public boolean searchItem(BlacklistItem input) {
